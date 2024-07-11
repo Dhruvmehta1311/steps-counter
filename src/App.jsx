@@ -7,20 +7,21 @@ function App() {
 
 function Counter() {
   const [counter, setCounter] = useState(0);
-  const [steps, setSteps] = useState(0);
+  const [steps, setSteps] = useState(1);
+
+  const date = new Date();
+  date.setDate(date.getDate() + counter);
 
   function handleIncrement() {
     setCounter(counter + steps);
   }
   function handleDecrement() {
-    if (counter === 0) return;
     setCounter(counter - steps);
   }
   function handleIncrementSteps() {
     setSteps(steps + 1);
   }
   function handleDecrementSteps() {
-    if (counter === 0) return;
     setSteps(steps - 1);
   }
 
@@ -60,6 +61,16 @@ function Counter() {
             Increment
           </button>
         </div>
+        <p>
+          <span>
+            {counter === 0
+              ? "Today is "
+              : counter > 0
+              ? `${counter} days from today `
+              : `${Math.abs(counter)} days ago was `}
+          </span>
+          <span>{date.toDateString()}</span>
+        </p>
       </div>
     </div>
   );
