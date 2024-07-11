@@ -22,6 +22,7 @@ function Counter() {
     setSteps(steps + 1);
   }
   function handleDecrementSteps() {
+    if (steps === 1) return;
     setSteps(steps - 1);
   }
 
