@@ -23,6 +23,11 @@ function Counter() {
     setSteps(Number(e.target.value));
   }
 
+  function handleReset() {
+    setCounter(0);
+    setSteps(1);
+  }
+
   return (
     <div className="bg-purple-400 h-screen text-black flex items-center justify-center">
       <div className="rounded-md bg-zinc-200 min-h-[350px] max-w-[90%] w-[480px] flex flex-col items-center justify-center gap-6 ">
@@ -70,6 +75,14 @@ function Counter() {
           </span>
           <span>{date.toDateString()}</span>
         </p>
+        {counter !== 0 || steps !== 1 ? (
+          <button
+            onClick={handleReset}
+            className="h-[38px] bg-blue-600 px-6 rounded-md text-center text-white"
+          >
+            Reset
+          </button>
+        ) : null}
       </div>
     </div>
   );
