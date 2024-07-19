@@ -18,12 +18,9 @@ function Counter() {
   function handleDecrement() {
     setCounter(counter - steps);
   }
-  function handleIncrementSteps() {
-    setSteps(steps + 1);
-  }
-  function handleDecrementSteps() {
-    if (steps === 1) return;
-    setSteps(steps - 1);
+
+  function handleStepsChange(e) {
+    setSteps(Number(e.target.value));
   }
 
   return (
@@ -32,19 +29,15 @@ function Counter() {
         <h1 className="font-bold text-3xl">Counter App</h1>
         <h1 className="font-semibold text-2xl">Steps</h1>
         <div className="flex gap-4 sm:gap-8 px-8">
-          <button
-            onClick={handleDecrementSteps}
-            className="px-2 py-3 bg-red-600 text-white rounded-md"
-          >
-            Decrement
-          </button>
+          <input
+            value={steps}
+            onChange={handleStepsChange}
+            type="range"
+            min="0"
+            max="10"
+          />
+
           <h1 className="font-bold text-5xl">{steps}</h1>
-          <button
-            onClick={handleIncrementSteps}
-            className="px-2 py-3 bg-blue-600 text-white rounded-md"
-          >
-            Increment
-          </button>
         </div>
         <h1 className="font-semibold text-2xl">Counter</h1>
         <div className="flex gap-4 sm:gap-8 px-6">
@@ -54,7 +47,12 @@ function Counter() {
           >
             Decrement
           </button>
-          <h1 className="font-bold text-5xl">{counter}</h1>
+          <input
+            className="bg-zinc-500 rounded-md px-2 text-white"
+            type="text"
+            value={counter}
+            onChange={(e) => setCounter(Number(e.target.value))}
+          />
           <button
             onClick={handleIncrement}
             className="px-2 py-3 bg-blue-600 text-white rounded-md"
