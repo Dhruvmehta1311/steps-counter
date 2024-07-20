@@ -30,7 +30,7 @@ function Counter() {
 
   return (
     <div className="bg-purple-400 h-screen text-black flex items-center justify-center">
-      <div className="rounded-md bg-zinc-200 min-h-[350px] max-w-[90%] w-[480px] flex flex-col items-center justify-center gap-6 ">
+      <div className="rounded-md py-4 bg-zinc-200 min-h-[350px] max-w-[90%] w-[480px] flex flex-col items-center justify-center gap-6 ">
         <h1 className="font-bold text-3xl">Counter App</h1>
         <h1 className="font-semibold text-2xl">Steps</h1>
         <div className="flex gap-4 sm:gap-8 px-8">
@@ -48,7 +48,7 @@ function Counter() {
         <div className="flex gap-4 sm:gap-8 px-6">
           <button
             onClick={handleDecrement}
-            className="px-4 py-3 bg-red-600  text-white rounded-md"
+            className="px-4 py-2 bg-red-600  text-white rounded-md"
           >
             <span className="font-semibold text-xl">-</span>
           </button>
@@ -60,7 +60,7 @@ function Counter() {
           />
           <button
             onClick={handleIncrement}
-            className="px-4 py-3 bg-blue-600 text-white rounded-md"
+            className="px-4 py-2 bg-blue-600 text-white rounded-md"
           >
             +
           </button>
