@@ -65,8 +65,8 @@ function Counter() {
             +
           </button>
         </div>
-        <p>
-          <span>
+        <p className="font-semibold">
+          <span className="font-semibold">
             {counter === 0
               ? "Today is "
               : counter > 0
