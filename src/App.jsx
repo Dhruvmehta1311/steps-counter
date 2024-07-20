@@ -48,9 +48,9 @@ function Counter() {
         <div className="flex gap-4 sm:gap-8 px-6">
           <button
             onClick={handleDecrement}
-            className="px-2 py-3 bg-red-600 text-white rounded-md"
+            className="px-4 py-3 bg-red-600  text-white rounded-md"
           >
-            Decrement
+            <span className="font-semibold text-xl">-</span>
           </button>
           <input
             className="bg-zinc-500 rounded-md px-2 text-white"
@@ -60,9 +60,9 @@ function Counter() {
           />
           <button
             onClick={handleIncrement}
-            className="px-2 py-3 bg-blue-600 text-white rounded-md"
+            className="px-4 py-3 bg-blue-600 text-white rounded-md"
           >
-            Increment
+            +
           </button>
         </div>
         <p>
