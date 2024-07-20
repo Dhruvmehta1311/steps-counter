@@ -53,7 +53,7 @@ function Counter() {
             <span className="font-semibold text-xl">-</span>
           </button>
           <input
-            className="bg-zinc-500 w-full rounded-md px-2 text-white"
+            className="bg-green-500 text-center w-full rounded-md px-2 text-white"
             type="text"
             value={counter}
             onChange={(e) => setCounter(Number(e.target.value))}
